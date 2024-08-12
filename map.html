@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Map Section</title>
+    <style>
+      #camera {
+        width: 100%;
+        height: 600px;
+        position: relative;
+      }
+
+      #map {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <!-- Add Leaflet.js library -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <section id="camera" class="camera map">
+      <div id="map"></div>
+    </section>
+
+    <script>
+      // Initialize the map
+      var map = L.map("map").setView([-8.5591, 125.5795], 8);
+
+      // Add a tile layer to the map (OpenStreetMap)
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 18,
+      }).addTo(map);
+
+      // Custom icon for markers
+      var customIcon = L.icon({
+        iconUrl: "/assets/img/map/map.png", // Path to your custom icon image
+        iconSize: [32, 40], // Size of the icon
+        iconAnchor: [16, 32], // Point of the icon which will correspond to marker's location
+        popupAnchor: [0, -32], // Point from which the popup should open relative to the iconAnchor
+      });
+
+      // Define locations
+      var locations = [
+        { name: "Aileu", lat: -8.7175, lon: 125.57 },
+        { name: "Ainaro", lat: -9.136, lon: 125.5695 },
+        { name: "Baucau", lat: -8.4667, lon: 126.45 },
+        { name: "Bobonaro", lat: -9.0, lon: 125.25 },
+        { name: "Cova Lima", lat: -9.3333, lon: 125.1667 },
+        { name: "Dili", lat: -8.5591, lon: 125.5795 },
+        { name: "Ermera", lat: -8.7548, lon: 125.3958 },
+        { name: "Lautem", lat: -8.3667, lon: 126.8833 },
+        { name: "Liquiçá", lat: -8.5874, lon: 125.3414 },
+        { name: "Manatuto", lat: -8.5114, lon: 126.0147 },
+        { name: "Manufahi", lat: -9.0042, lon: 125.8703 },
+        { name: "Oecusse", lat: -9.2022, lon: 124.3153 },
+        { name: "Viqueque", lat: -8.8589, lon: 126.3681 },
+      ];
+
+      // Add markers to the map using the custom icon
+      locations.forEach(function (location) {
+        L.marker([location.lat, location.lon], { icon: customIcon })
+          .addTo(map)
+          .bindPopup(location.name)
+          .openPopup();
+      });
+    </script>
+  </body>
+</html>
