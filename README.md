@@ -49,4 +49,3 @@ This project is licensed under the MIT License.
 For any inquiries or feedback, please contact us at:
 
 - **LinkedIn**: [Ajito Nelson](https://www.linkedin.com/in/ajitonelson/)
-- **Twitter**: [@ajitonelson](https://x.com/ajitonelson)
