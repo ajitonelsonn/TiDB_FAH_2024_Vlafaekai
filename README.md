@@ -1,7 +1,7 @@
 <div align="center" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap;">
   <img src="assets/img/lafaek_ai.png" alt="LAFAEK AI Logo" width="70" style="margin-right: 20px;"/>
   <span style="font-size: 28px; font-weight: bold; margin: 0 30px;">LAFAEK AI - TiDB FAH 2024</span>
-  <img src="assets/img/clients/client-2.png" alt="TiDB Logo" width="120" style="margin-left: 20px;"/>
+  <img src="assets/img/clients/client-1.png" alt="TiDB Logo" width="120" style="margin-left: 20px;"/>
 </div>
 
 ## Overview
